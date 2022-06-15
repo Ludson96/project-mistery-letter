@@ -4,7 +4,11 @@ const textoGerado = document.getElementById('texto-gerado');
 
 function gerarCarta() {
   const carta = document.getElementById('carta-texto');
-  textoGerado.innerHTML = carta.value;
+  if (!carta.value || carta.value === ' ') {
+    textoGerado.innerHTML = 'Por favor, digite o conteúdo da carta.';
+  } else {
+    textoGerado.innerHTML = carta.value;
+  }
 }
 
 criarCarta.addEventListener('click', gerarCarta);
